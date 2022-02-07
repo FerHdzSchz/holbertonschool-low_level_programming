@@ -1,5 +1,5 @@
-#include <stdio.h>
 /* File that prints a string */
+#include <stdio.h>
 int main(void)
 {
 /*Using puts to print string to stdout*/
