@@ -1,4 +1,3 @@
-#include <_putchar.h>
 #include <main.h>
 /**
  * main - Function to print "_putchar"
