@@ -19,8 +19,8 @@ int _putchar(char c)
 
 int print_putchar(void)
 {
-_putchar(_);
-_putchar(p);
+_putchar(char "_");
+_putchar("p");
 _putchar("u");
 _putchar("t");
 _putchar("c");
