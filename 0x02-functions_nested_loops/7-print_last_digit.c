@@ -15,6 +15,6 @@ if (l_dig < 0)
 {
 l_dig *= -1;
 }
-_putchar(l_dig);
+_putchar(l_dig + '0');
 return (l_dig);
 }
