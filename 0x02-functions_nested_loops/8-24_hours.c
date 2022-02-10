@@ -3,33 +3,20 @@
  * jack_bauer - Print hour countdown
  *
  */
-
 void jack_bauer(void)
 {
-int hour, min;
+	int hour, minute;
 
-for (hour = 0; hour < 24; hour++)
-for (min = 0; min < 61; min++)
-{
-{
-if (hour < 10)
-{
-_putchar('0');
-_putchar(hour);
-}
-else
-{
-_putchar(hour);
-}
-_putchar(':');
-if (min < 10)
-{
-_putchar('0');
-_putchar(min);
-}
-else
-{
-_putchar(min);
-}
-}
+	for (hour = 0; hour <= 23; hour++)
+	{
+		for (minute = 0; minute <= 59; minute++)
+		{
+			_putchar((hour / 10) + '0');
+			_putchar((hour % 10) + '0');
+			_putchar(':');
+			_putchar((minute / 10) + '0');
+			_putchar((minute % 10) + '0');
+			_putchar('\n');
+		}
+	}
 }
