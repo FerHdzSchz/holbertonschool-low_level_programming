@@ -2,7 +2,7 @@
 /**
  * _islower - Function that checks for lowercase character.
  *
- * @c - character
+ * @c: The character to test
  *
  * Return: 1 if c is lowercase, 0 otherwise
  */
