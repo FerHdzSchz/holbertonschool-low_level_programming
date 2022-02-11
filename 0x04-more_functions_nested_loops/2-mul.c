@@ -3,10 +3,10 @@
  * @a: first multiplier
  * @b: second multiplier
  *
- * Result: multiplication result
+ * Return: multiplication result
  */
 
 int mul(int a, int b)
 {
-return (a*b);
+return (a * b);
 }
