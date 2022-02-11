@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _issupper -  Function to detect if a character is 
+ * _isupper -  Function to detect if a character is
  *
  * @c: Character to evaluate
  *
@@ -8,9 +8,12 @@
  */
 int _isupper(int c)
 {
-if (c>='A' && c<='Z')
+if (c >= 'A' && c <= 'Z')
 {
 return (1);
 }
-returm (0);
+else
+{
+return (0);
+}
 }
