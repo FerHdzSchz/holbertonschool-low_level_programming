@@ -1,5 +1,12 @@
 #include "main.h"
-
+/**
+ * _strncpy - Function to copy strings
+ *
+ * @dest: qord 2
+ * @src: word 1
+ * @n:number of overall chars to copy
+ * Return: Copied text
+ */
 char *_strncpy(char *dest, char *src, int n)
 {
 
