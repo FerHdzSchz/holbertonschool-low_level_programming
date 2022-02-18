@@ -27,4 +27,5 @@ j++;
 }
 dest[str_len] = '\0';
 return (dest);
+
 }
