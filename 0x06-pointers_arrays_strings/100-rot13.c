@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * rot13 - Retur string 
+ * rot13 - Return string as rot13
  *
- * @param str
- * @return char* 
+ * @str: String to convert
+ * Return: Converted string
  */
 
 char *rot13(char *str)
@@ -20,15 +20,15 @@ aux_char = 0;
 
 while (str[curr_char] != '\0')
 {
-    for (aux_char = 0; str[aux_char] != '\0'; aux_char++)
-        {
-            if (str[curr_char] == aux1_chars[aux_char])
-                {
-                    str[curr_char] = aux2_chars[aux_char];
-                    break;
-                }
-        }
-    curr_char++;
+for (aux_char = 0; str[aux_char] != '\0'; aux_char++)
+{
+if (str[curr_char] == aux1_chars[aux_char])
+{
+str[curr_char] = aux2_chars[aux_char];
+break;
+}
+}
+curr_char++;
 }
 return (str);
 }
