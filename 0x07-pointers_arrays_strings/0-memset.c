@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * _memset - Function to fill first n bytes with b
  *
