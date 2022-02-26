@@ -34,7 +34,7 @@ int is_int(char *tmp)
  * @argc: Count of arguments
  * @argv: List of arguments
  *
- * Return: Print the addition, if no number passed print 0. If one of the number contains symbols that are not digits, print Error, followed by a new line, and return 1
+ * Return: Print the addition, if no number passed print 0.
  */
 int main(int argc, char **argv)
 {
