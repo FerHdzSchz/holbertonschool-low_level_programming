@@ -1,9 +1,16 @@
 #include <stdlib.h>
 #include <time.h>
-#include <stdio.h>
 /* more headers goes there */
+#include <stdio.h>
 
 /* betty style doc for function main goes there */
+/**
+ * main - Function to find if rand number is positive, negative or zero.
+ *
+ * Return: Always 0
+ */
+
+
 int main(void)
 {
 	int n;
@@ -13,13 +20,13 @@ int main(void)
 	/* your code goes there */
 	if (n > 0)
 	{
-		printf("%d is positive", n);
+		printf(" %d is positive", n);
 	} else if (n == 0)
 	{
-		printf("%d is zero", n);
+		printf(" %d is zero", n);
 	} else if (n < 0)
 	{
-		printf("%d is negative", n);
+		printf(" %d is negative", n);
 	}
 	return (0);
 }
