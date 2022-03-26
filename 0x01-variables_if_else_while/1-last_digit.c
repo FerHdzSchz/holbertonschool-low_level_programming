@@ -22,14 +22,14 @@ int main(void)
 
 	if (r > 5)
 	{
-		printf("The las digit of %d is %d and is greater than 5\n", n, r);
+		printf("Last digit of %d is %d and is greater than 5\n", n, r);
 	}
 	else if (r == 0)
 	{
-		printf("The las digit of %d is %d and is 0\n", n, r);
+		printf("Last digit of %d is %d and is 0\n", n, r);
 	} else if (r < 0)
 	{
-		printf("The las digit of %d is %d and is less than 5\n", n, r);
+		printf("Last digit of %d is %d and is less than 5\n", n, r);
 	}
 
 	return (0);
