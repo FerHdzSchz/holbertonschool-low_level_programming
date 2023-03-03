@@ -2,6 +2,6 @@ CC = gcc
 SRC = main.c school.c
 OBJ = $(wildcard *.o)
 NAME = school
-all: school
-school: ${SRC}
+all: comp
+comp: ${SRC}
 	${CC} ${SRC} -o ${NAME}
