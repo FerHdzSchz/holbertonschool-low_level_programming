@@ -4,4 +4,4 @@ OBJ = $(wildcard *.o)
 NAME = school
 all: comp
 comp: ${SRC}
-	${CC} ${OBJ} -o ${NAME}
+	${CC} ${SRC} -o ${NAME}
