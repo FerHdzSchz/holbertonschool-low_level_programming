@@ -2,8 +2,7 @@ CC = gcc
 SRC = main.c school.c
 OBJ = $(wildcard *.o)
 NAME = school
-all: $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+all: comp
 
-%.o: main.c school.c
-	$(CC) -c $(SRC) -o $@
+comp: $(SRC)
+	$(CC) $(SRC) $(OBJ) -o $(NAME)
