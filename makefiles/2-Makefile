@@ -5,10 +5,10 @@ NAME=school
 CC=gcc
 
 #Source files
-SRC=$(wildcard *.c)
+SRC=main.c school.c
 
 #Object files
-OBJ=$(SRC:.c=.o)
+OBJ=$(wildcard.o)
 
 #Rule to build executable
 all: $(OBJ)
