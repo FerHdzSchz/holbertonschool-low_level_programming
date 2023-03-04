@@ -1,8 +1,20 @@
+all: $(BINS)
+
 CC = gcc
 SRC = main.c school.c
 OBJ = $(wildcard *.o)
 NAME = school
-all: obj
-	$(CC) $(OBJ) -o $(NAME)
-obj: $(SRC)
-	$(CC) -c $^
+
+BINS := $(SRC:%.c=%)
+
+%: %.o
+	${CC} ${LINKERFLAG} $< -o $@
+
+%.o: %.c
+	${CC} -c $<
+
+
+##all: obj
+##	$(CC) $(OBJ) -o $(NAME)
+##obj: $(SRC)
+##	$(CC) -c $^
