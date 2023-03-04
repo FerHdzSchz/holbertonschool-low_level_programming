@@ -13,4 +13,4 @@ oclean:
 fclean:
     $(RM) *\~ *.swp *.o school
 re:
-    $(CC) $(SRC) -o $(NAME)
+    $(CC) $(SRC)
