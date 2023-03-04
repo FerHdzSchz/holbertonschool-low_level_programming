@@ -19,4 +19,5 @@ fclean:
 	$(RM) -f *\~ *.swp *.o $(NAME)
 
 re:
+	$(RM) *.o $(NAME)
 	$(CC) $(SRC) -o $(NAME)
