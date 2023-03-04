@@ -19,5 +19,6 @@ oclean:
 fclean:
 	$(RM) -f *\~ *.swp *.o $(NAME)
 
-re:
-	$(CC) $(SRC) $(CFLAGS) -o $(NAME)
+re: $(OBJ)
+	$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
+	$(RM) -f *.o $(NAME)
