@@ -11,6 +11,6 @@ clean:
 oclean:
     $(RM) *.o
 fclean:
-    $(RM) *\~ *.swp *.o $(NAME)
+    $(RM) *\~ *.swp *.o
 re:
     $(CC) $(SRC) -o $(NAME)
