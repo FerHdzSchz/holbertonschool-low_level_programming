@@ -10,22 +10,22 @@
 
 char *_strchr(char *s, char c)
 {
-    int i;
+	int i;
 
-    i = 0;
+	i = 0;
 
-    while (s[i] != '\0')
-    {
-        if (s[i] == c)
-    {
-        return (&s[i]);
-    }
-        i++;
-    }
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+	{
+		return (&s[i]);
+	}
+		i++;
+	}
 
-    if(c == '\0')
-    {
-        return s;
-    }
-    return (0);
+	if (c == '\0')
+	{
+		return (s);
+	}
+	return (0);
 }
