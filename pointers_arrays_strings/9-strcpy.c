@@ -12,21 +12,27 @@
 char *_strcpy(char *dest, char *src)
 {
 	int str_len;
+	int dest_len;
 	int i;
 
 	str_len = 0;
-
+	dest_len = 0;
 
 	while (*(src + str_len) != '\0')
 	{
 		str_len++;
 	}
 
+	while (*(dest + dest_len) != '\0')
+	{
+		dest_len++;
+	}
+
 	for (i = 0; i <= str_len; i++)
 	{
 		dest[i] = src[i];
 	}
-	if (str_len != 0)
+	if (str_len != 0 && dest_len >= str_len)
 	{
 		dest[i + 1] = src[i + 1];
 	}
