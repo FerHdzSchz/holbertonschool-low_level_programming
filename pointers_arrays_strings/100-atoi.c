@@ -36,6 +36,10 @@ int _atoi(char *s)
 			fnum = fnum * 10 + d;
 			n++;
 		}
+		else if (fnum != 0 && !(s[n + 1] >= '0' && s[n + 1] <= '9'))
+		{
+			break;
+		}
 		else
 		{
 			n++;
