@@ -10,7 +10,7 @@
 */
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j, needle_len, counter;
+	int i, j, counter;
 	char *ptr = haystack;
 
 	/* First find needle len*/
@@ -35,7 +35,7 @@ char *_strstr(char *haystack, char *needle)
 		}
 		i++;
 	}
-	if (counter != j | counter == 0)
+	if (counter != j || counter == 0)
 	{
 		ptr = NULL;
 	}
