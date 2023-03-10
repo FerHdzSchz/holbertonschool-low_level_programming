@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * _strspn - length of a prefix substring
+ *
  * @s: string
  * @accept: contains bytes of prefix
  *
@@ -14,7 +15,8 @@ unsigned int _strspn(char *s, char *accept)
 
 	len = 0;
 	i = 0;
-	while (s[i] != '\0' && s[i+1] != ' ')
+
+	while (s[i] != '\0' && s[i + 1] != ' ')
 	{
 		j = 0;
 		while (accept[j] != '\0')
