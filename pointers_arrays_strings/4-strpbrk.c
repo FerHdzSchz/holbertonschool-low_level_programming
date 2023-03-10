@@ -45,14 +45,10 @@ char *_strpbrk(char *s, char *accept)
 		}
 		i++;
 	}
+	ptr = NULL;
 	if (counter != 0)
 	{
 		ptr = &s[loc];
-		return (ptr);
 	}
-	else
-	{
-		ptr = NULL;
-		return(ptr);
-	}
+	return (ptr);
 }
