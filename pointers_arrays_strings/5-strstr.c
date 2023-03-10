@@ -35,7 +35,7 @@ char *_strstr(char *haystack, char *needle)
 		}
 		i++;
 	}
-	if (counter != j || counter == 0 || *needle == '\0')
+	if (counter != j || counter == 0 || needle == '\0')
 	{
 		ptr = NULL;
 	}
