@@ -10,36 +10,49 @@
 */
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j, counter;
+	int str_len, ndl_len;
+	int i, j, counter, loc;
 	char *ptr = haystack;
 
 	/* First find needle len*/
 	i = 0;
+	loc = 0;
+	ndl_len = 0;
+	str_len = 0;
 	counter = 0;
 
-	while (haystack[i] != '\0')
+
+	while (needle[ndl_len] != '\0')
 	{
-		j = 0;
-		while (needle[j] != '\0')
+		ndl_len++;
+	}
+	while (haystack[str_len] != '\0')
+	{
+		str_len++;
+	}
+
+	for (i = 0; i < str_len - ndl_len + 1; i++)
+	{
+		for (j = 0; j < ndl_len; j++)
 		{
-			if (needle[j] == haystack[i])
+			if (haystack[i] == needle[j])
 			{
+				counter += 1;
 				if (j == 0)
 				{
-					ptr = &haystack[i];
+					loc = i;
+					printf ("%s %d\n\n", "loc: ", loc);
 				}
-				counter++;
+			if (counter == ndl_len)
+			{
+				ptr = &haystack[loc];
 				break;
 			}
-			j++;
+			}
 		}
-		i++;
 	}
-	if(*needle == '\0')
-	{
-		ptr = haystack;
-	}
-	else if (counter != j || counter == 0)
+
+	if (counter < ndl_len)
 	{
 		ptr = NULL;
 	}
