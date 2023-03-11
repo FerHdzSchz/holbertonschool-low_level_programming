@@ -18,7 +18,6 @@ char *_strstr(char *haystack, char *needle)
 	ndl_len = 0;
 	str_len = 0;
 	counter = 0;
-
 	while (needle[ndl_len] != '\0')
 	{
 		ndl_len++;
@@ -41,6 +40,7 @@ char *_strstr(char *haystack, char *needle)
 			if (counter == ndl_len)
 			{
 				ptr = &haystack[loc];
+				break;
 			}
 			}
 		}
