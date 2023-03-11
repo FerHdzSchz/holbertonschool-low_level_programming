@@ -41,7 +41,6 @@ char *_strstr(char *haystack, char *needle)
 			if (counter == ndl_len)
 			{
 				ptr = &haystack[loc];
-				return (ptr);
 			}
 			}
 		}
@@ -50,4 +49,5 @@ char *_strstr(char *haystack, char *needle)
 	{
 		return (NULL);
 	}
+	return (ptr);
 }
