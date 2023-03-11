@@ -41,7 +41,6 @@ char *_strstr(char *haystack, char *needle)
 				if (j == 0)
 				{
 					loc = i;
-					printf ("%s %d\n\n", "loc: ", loc);
 				}
 			if (counter == ndl_len)
 			{
