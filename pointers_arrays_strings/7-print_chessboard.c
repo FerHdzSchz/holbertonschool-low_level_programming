@@ -14,5 +14,5 @@ void print_chessboard(char (*a)[8])
         }
         _putchar(10);
     }
-    _putchar(10)
+    _putchar(10);
 }
