@@ -45,9 +45,9 @@ char *_strstr(char *haystack, char *needle)
 			}
 		}
 	}
-	if (ndl_len != counter)
+	if (counter	!= ndl_len)
 	{
-		return (NULL);
+		return (0);
 	}
 	return (ptr);
 }
