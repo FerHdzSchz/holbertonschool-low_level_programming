@@ -19,7 +19,10 @@ char *_strdup(char *str)
     {
         str_len++;
     }
-
+    if (str == '\0')
+    {
+        return (0);
+    }
     if (str_len == 0)
     {
         return (0);
