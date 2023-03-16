@@ -15,19 +15,19 @@ char *_strdup(char *str)
 
 	str_len = 0;
 
-	if (*str == '\0' | *str == NULL)
-	{
-		return (0);
-	}
 
 	while (*(str + str_len) != '\0')
 	{
 		str_len++;
 	}
 
-	if (str_len >= 0)
+	if (str[0] == '\0')
 	{
-		array = malloc(sizeof(char) * str_len+1);
+		return (0);
+	}
+	else if (str_len >= 0)
+	{
+		array = malloc((sizeof(char) * str_len) + 1);
 		if (array == NULL)
 		{
 			return (0);
