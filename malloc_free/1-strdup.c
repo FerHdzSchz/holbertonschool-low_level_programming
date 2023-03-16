@@ -15,7 +15,7 @@ char *_strdup(char *str)
 
 	str_len = 0;
 
-	if (*str == '\0')
+	if (*str == '\0' | *str == NULL)
 	{
 		return (0);
 	}
@@ -32,7 +32,7 @@ char *_strdup(char *str)
 		{
 			return (0);
 		}
-		for (i = 0; i < str_len+1; i++)
+		for (i = 0; i < str_len + 1; i++)
 		{
 			array[i] = str[i];
 		}
