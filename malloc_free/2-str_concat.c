@@ -25,19 +25,32 @@ char *str_concat(char *s1, char *s2)
 		str2_len++;
 
 	array = malloc((sizeof(char) * (str1_len + str2_len)) + 1);
-
-	for (i = 0; i < (str1_len + str2_len); i++)
+	if (array == NULL || ((s1 == NULL) && (s2 == NULL)))
 	{
-		if (i < str1_len)
-		{
-			array[i] = s1[i];
-		}
-		else
-		{
-			array[i] = s2[i - str1_len];
-		}
+		return (0);
 	}
-
-	array[i+1] = '\0';
+	if (s1 == NULL)
+	{
+		return (s2);
+	}
+	else if (s2 == NULL)
+	{
+		return (s1);
+	}
+	else
+	{
+		for (i = 0; i < (str1_len + str2_len); i++)
+		{
+			if (i < str1_len)
+			{
+				array[i] = s1[i];
+			}
+			else
+			{
+				array[i] = s2[i - str1_len];
+			}
+		}
+		array[i+1] = '\0';
+	}
 	return (array);
 }
