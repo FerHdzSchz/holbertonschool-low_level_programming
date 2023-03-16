@@ -13,6 +13,11 @@ char *_strdup(char *str)
 	int i;
 	char *array;
 
+	if (str == NULL)
+	{
+		return (0);
+	}
+
 	str_len = 0;
 
 	while (*(str + str_len) != '\0')
@@ -20,11 +25,7 @@ char *_strdup(char *str)
 		str_len++;
 	}
 
-	if (str == NULL)
-	{
-		return (0);
-	}
-	else if (str_len > 0 || str[0] == '\0')
+	if (str_len > 0 || str[0] == '\0')
 	{
 		array = malloc((sizeof(char) * str_len) + 1);
 		if (array == NULL)
