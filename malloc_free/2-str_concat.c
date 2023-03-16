@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * *str_concat - concat s1 and s2
@@ -12,8 +13,11 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int str1_len, str2_len;
+	int str1_len, str2_len, i;
 	char *array;
+
+	str1_len = 0;
+	str2_len = 0;
 
 	while (*(s1 + str1_len) != '\0')
 		str1_len++;
@@ -24,12 +28,16 @@ char *str_concat(char *s1, char *s2)
 
 	for (i = 0; i < (str1_len + str2_len); i++)
 	{
-		if i < str1_len;
+		if (i < str1_len)
+		{
 			array[i] = s1[i];
+		}
 		else
-			array[i] = s2[i + str1_len];
+		{
+			array[i] = s2[i - str1_len];
+		}
 	}
-	array[i + 1] = '\0';
 
+	array[i+1] = '\0';
 	return (array);
 }
