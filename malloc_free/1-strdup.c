@@ -15,26 +15,24 @@ char *_strdup(char *str)
 
 	str_len = 0;
 
-	while (*(str + str_len) != '\0')
-	{
-		str_len++;
-	}
 	if (*str == '\0')
 	{
 		return (0);
 	}
-	if (str_len == 0)
+
+	while (*(str + str_len) != '\0')
 	{
-		return (0);
+		str_len++;
 	}
-	else
+
+	if str_len >= 0
 	{
-		array = malloc(sizeof(char) * str_len);
+		array = malloc(sizeof(char) * str_len+1);
 		if (array == NULL)
 		{
 			return (0);
 		}
-		for (i = 0; i < str_len; i++)
+		for (i = 0; i < str_len+1; i++)
 		{
 			array[i] = str[i];
 		}
