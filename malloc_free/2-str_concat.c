@@ -50,7 +50,7 @@ char *str_concat(char *s1, char *s2)
 				array[i] = s2[i - str1_len];
 			}
 		}
-		array[i+1] = '\0';
+		array[i + 1] = '\0';
 	}
 	return (array);
 }
