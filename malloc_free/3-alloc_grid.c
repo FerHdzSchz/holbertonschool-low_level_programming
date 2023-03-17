@@ -21,21 +21,21 @@ int **alloc_grid(int width, int height)
 	h = 0;
 	w = 0;
 
-	if (width <= 0 || height <= 0)
-	{
-		return (NULL);
-	}
-
-	if (array2d == NULL)
+	if (width <= 0 || height <= 0 || array2d == NULL)
 	{
 		free(array2d);
 		return (0);
 	}
+
 	for (h = 0;  h < height; h++)
 	{
 		array2d[h] = (int *)malloc(width * sizeof(int));
 		if (array2d[h] == NULL)
 		{
+			for (w = 0; w < h; w++)
+			{
+				free(array2d[w]);
+			}
 			free(array2d);
 			return (0);
 		}
@@ -44,11 +44,8 @@ int **alloc_grid(int width, int height)
 			array2d[h][w] = 0;
 			/*printf("arr[%d][%d] = %d\n", h,w, array2d[h][w]);*/
 		}
-
-		if (array2d[h] == NULL)
-			return (0);
 	}
 
-
+	free(array2d);
 	return (array2d);
 }
