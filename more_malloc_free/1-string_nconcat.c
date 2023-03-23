@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * *string_nconcat - Concatenates s1 and n chars of s2
@@ -14,6 +15,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	char *array;
 	unsigned int str1_len, str2_len;
+	unsigned int m_size;
 	unsigned int i;
 
 	str1_len = 0;
@@ -26,17 +28,22 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	while (*(s1 + str1_len) != '\0')
 		str1_len++;
+	printf("S1 len = %d\n", str1_len);
 	while (*(s2 + str2_len) != '\0')
 		str2_len++;
-
-	if (n > str2_len)
+	printf("S2 len = %d\n", str2_len);
+	if (n >= str2_len)
 		n = str2_len;
+	printf("n len = %d\n", n);
 
+	m_size = sizeof(char) * (n + str1_len) + 1;
+	printf("len of copy = %d\n", m_size);
 	array = malloc(sizeof(char) * (n + str1_len) + 1);
 	if (array == NULL)
 		return (0);
-	for (i = 0; i <=(n + str1_len); i++)
+	for (i = 0; i < (n + str1_len); i++)
 	{
+		printf("i = %d\n", i);
 		if (i < str1_len)
 			array[i] = s1[i];
 		else
