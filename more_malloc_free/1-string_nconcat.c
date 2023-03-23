@@ -12,10 +12,8 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-
-	char *array;
+	char *array = NULL;
 	unsigned int str1_len, str2_len;
-	unsigned int m_size;
 	unsigned int i;
 
 	str1_len = 0;
@@ -25,29 +23,23 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	if (s1 == NULL && s2 == NULL)
-	{
-		array = malloc(1);
-		return (array);
-	}
-	while (*(s1 + str1_len) != '\0')
+	while (s1[str1_len] != '\0')
 		str1_len++;
-	while (*(s2 + str2_len) != '\0')
+	while (s2[str2_len] != '\0')
 		str2_len++;
-	if (n >= str2_len)
+
+	if (n > str2_len)
 		n = str2_len;
 
-	m_size = sizeof(char) * (n + str1_len) + 1;
-	array = malloc(m_size);
+	array = malloc((sizeof(char) * (n + str1_len) + 1));
 	if (array == NULL)
 		return (0);
-	for (i = 0; i < (n + str1_len); i++)
-	{
-		if (i < str1_len)
-			array[i] = s1[i];
-		else
-			array[i] = s2[i - str1_len];
-	}
-	array[i + 1] = '\0';
+	for (i = 0; i < str1_len; i++)
+		array[i] = s1[i];
+	for (i = 0; i < n; i++)
+		array[i + str1_len] = s2[i];
+
+	array[str1_len + n] = '\0';
+	/*printf("array last member is = %d\n", array[m_size]);*/
 	return (array);
 }
