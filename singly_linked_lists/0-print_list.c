@@ -1,10 +1,9 @@
 #include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
 #include "lists.h"
 /**
 * print_list - function print elemens of linked list and the number of nodes
-* @*h: pointer to list first element
+* @h: pointer to list first element
 * Return: number of nodes
 */
 
