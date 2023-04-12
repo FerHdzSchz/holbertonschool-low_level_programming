@@ -11,6 +11,7 @@
 void free_list(list_t *head)
 {
 	list_t *node;
+	node = malloc(sizeof(list_t));
 
 	while (head)
 	{
@@ -18,4 +19,5 @@ void free_list(list_t *head)
 		free(head->str);
 		head = node;
 	}
+	free(node);
 }
