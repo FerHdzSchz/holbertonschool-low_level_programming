@@ -1,3 +1,6 @@
+#include "lists.h"
+#include <stdlib.h>
+
 /**
  * dlistint_len - Count n of elements of double linked list
  * @h: pointer to head of dlinked list
