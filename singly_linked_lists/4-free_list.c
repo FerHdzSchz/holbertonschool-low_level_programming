@@ -11,13 +11,20 @@
 void free_list(list_t *head)
 {
 	list_t *node;
-	node = malloc(sizeof(list_t));
+	list_t *nw_node;
 
-	while (head)
+	if (head != NULL)
 	{
-		node = head->next;
-		free(head->str);
-		head = node;
+		node = head;
+		nw_node = head->next;
+		while (nw_node != NULL)
+		{
+			free(node->str);
+			free(node);
+			node = nw_node;
+			nw_node = nw_node->next;
+		}
+		free(node->str);
+		free(node);
 	}
-	free(node);
 }
