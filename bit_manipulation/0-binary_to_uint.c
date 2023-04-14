@@ -10,7 +10,7 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int idx, strlen, digit, power, i, decimal;
+	int idx, strlen, digit, power, i, decimal;
 
 	idx = 0;
 	strlen = 0;
