@@ -25,7 +25,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	while (h != NULL)
 	{
 		n++;
-		if (index == (n-1))
+		if (index == (n - 1))
 		{
 			idx_node = h;
 			break;
@@ -35,7 +35,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	if (index < (n - 1))
 	{
-		return (NULL);
+		idx_node = NULL;
 	}
 	return (idx_node);
 }
