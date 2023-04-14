@@ -39,7 +39,7 @@ unsigned int binary_to_uint(const char *b)
 			{
 				power *= 2;
 			}
-			decimal = decimal + (power * digit;
+			decimal = decimal + (power * digit);
 		}
 		idx++;
 	}
