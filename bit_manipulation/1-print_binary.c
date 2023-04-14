@@ -13,7 +13,7 @@ void print_binary(unsigned long int n)
 	unsigned long int aux_n = n;
 
 	j = 0;
-	for (c = 1; c <= 32; c++)
+	for (c = 1; c <= 64; c++)
 		{
 		aux_n >>= 1;
 		if (aux_n > 0)
