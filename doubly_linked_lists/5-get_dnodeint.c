@@ -2,14 +2,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * dlistint_len - Count n of elements of double linked list
- * @h: pointer to head of dlinked list
- * Return: number of elements in list
+ * get_dnodeint_at_index - Get node at index
+ * @head: pointer to head of dlinked list
+ * @index: index of element to return
+ * Return: 0 if error, else indexed node
 */
 
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-    unsigned int n;
+	unsigned int n;
 	dlistint_t *h = head;
 	dlistint_t *idx_node;
 
@@ -22,7 +23,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	n = 0;
 	while (h != NULL)
 	{
-		if (index == (n-1))
+		if (index == (n - 1))
 		{
 			idx_node = h;
 			break;
@@ -31,7 +32,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 		n++;
 	}
 
-	if (index < (n -1))
+	if (index < (n - 1))
 	{
 		return (NULL);
 	}
