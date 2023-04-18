@@ -14,32 +14,32 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-    ssize_t num_bytes;
-    int fop;
-    char *arr_buff;
+	ssize_t num_bytes;
+	int fop;
+	char *arr_buff;
 
-    if (*(filename) == '\0')
-    {
-        return (0);
-    }
-    arr_buff = malloc((sizeof(char) * letters) + 1);
-    if (arr_buff == NULL)
-    {
-        free(arr_buff);
-        return (0);
-    }
+	if (*(filename) == '\0')
+	{
+		return (0);
+	}
+	arr_buff = malloc((sizeof(char) * letters) + 1);
+	if (arr_buff == NULL)
+	{
+		free(arr_buff);
+		return (0);
+	}
 
-    fop = open(filename, O_RDONLY);
-    if (fop == -1)
-    {
-        free(arr_buff);
-        return (0);
-    }
+	fop = open(filename, O_RDONLY);
+	if (fop == -1)
+	{
+		free(arr_buff);
+		return (0);
+	}
 
-    num_bytes = read(fop, arr_buff, letters);
-    write(STDOUT_FILENO, arr_buff, num_bytes);
-    free(arr_buff);
-    close(fop);
+	num_bytes = read(fop, arr_buff, letters);
+	write(STDOUT_FILENO, arr_buff, num_bytes);
+	free(arr_buff);
+	close(fop);
 
-    return (num_bytes);
+	return (num_bytes);
 }
