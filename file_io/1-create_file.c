@@ -3,7 +3,10 @@
 #include <stdlib.h>
 
 /**
- * 
+ * create_file - creates a file and writes content
+ *  @filename: file name to create
+ * @text_content: content to insert to file
+ * Return: 1 if success or -1 if fail
 */
 int create_file(const char *filename, char *text_content)
 {
@@ -31,8 +34,6 @@ int create_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	printf("%s\n", text_content );
 	write(fop, text_content, text_len);
 	return (1);
-
 }
