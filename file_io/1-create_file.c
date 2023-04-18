@@ -29,8 +29,7 @@ int create_file(const char *filename, char *text_content)
 		text_len++;
 	}
 
-
-	fop = open(filename, O_CREAT | O_RDONLY | O_TRUNC, 0600);
+	fop = open(filename, O_CREAT | O_RDONLY | O_WRONLY | O_TRUNC, 0600);
 	if (fop == -1)
 	{
 		return (-1);
