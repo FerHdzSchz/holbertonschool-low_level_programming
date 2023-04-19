@@ -14,11 +14,6 @@ int append_text_to_file(const char *filename, char *text_content)
 {
 	int fop, text_len;
 
-	if (*(filename) == '\0')
-	{
-		return (-1);
-	}
-
 	if (filename == NULL)
 	{
 		return (-1);
@@ -36,7 +31,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		text_len++;
 	}
 
-	fop = open(filename, O_RDWR | O_APPEND, 600);
+	fop = open(filename, O_WRONLY | O_APPEND, 600);
 	if (fop == -1)
 	{
 		return (-1);
