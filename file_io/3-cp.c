@@ -18,7 +18,7 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to\n");
 		return (97);
 	}
-	fop = open(av[1], O_RDONLY);
+	fop = open(av[1], O_RDONLY, 0664);
 	fcp = open(av[2], O_CREAT | O_RDWR | O_APPEND | O_TRUNC, 0664);
 	chars2read = 1024;
 	while (chars2read == 1024)
