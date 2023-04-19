@@ -32,7 +32,7 @@ int main(int ac, char **av)
 		chars2write = write(fcp, char_buff, chars2read);
 		if (chars2write == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", av[2]);
 			return (99);
 		}
 	}
