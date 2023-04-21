@@ -1,6 +1,7 @@
 #include "hash_tables.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * hash_table_set - Create and set new node for hash table
@@ -13,58 +14,43 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long idx;
-	int i;
-	hash_node_t *new_node;
-	hash_node_t *aux_node;
+	hash_node_t *new;
+	char *value_copy;
+	unsigned long int index, i;
 
-	if (ht == NULL | *(key) == '\0')
-	{
+	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
-	}
 
-	idx = key_idx(key, ht->size);
-	aux_node = ht->array[idx]; /*Save array[idx] for collision handling*/
+	value_copy = strdup(value);
+	if (value_copy == NULL)
+		return (0);
 
-
-	if (ht->array[idx] == NULL)
+	index = key_index((const unsigned char *)key, ht->size);
+	for (i = index; ht->array[i]; i++)
 	{
-		new_node = malloc(sizeof(hash_node_t *));
-		if (new_node == NULL)
+		if (strcmp(ht->array[i]->key, key) == 0)
 		{
-			return (0);
-		}
-		new_node->key = idx;
-		new_node->value = value;
-		new_node->next = NULL;
-		ht->array[idx] = new_node;
-		return(1);
-	}
-	else
-	{
-		aux_node = ht->array[idx];
-		if (strcmp(aux_node->key, key) == 0)
-		{
-			new_node->next = aux_node->next;
-			ht->array[idx] = new_node;
-			free_node(aux_node);
+			free(ht->array[i]->value);
+			ht->array[i]->value = value_copy;
 			return (1);
 		}
-		while (aux_node->next != NULL && strcmp(aux_node->next->key, key) != 0)
-		{
-			aux_node = aux_node->next;
-		}
-			if (strcmp(aux_node->key, key) == 0)
-		{
-			new_node->next = aux_node->next->next;
-			free_node(aux_node->next);
-			aux_node->next = new_node;
-		}
-		else
-		{
-			new_node->next = ht->array[idx];
-			ht->array[idx] = new_node;
-		}
 	}
-   return (1);
+
+	new = malloc(sizeof(hash_node_t));
+	if (new == NULL)
+	{
+		free(value_copy);
+		return (0);
+	}
+	new->key = strdup(key);
+	if (new->key == NULL)
+	{
+		free(new);
+		return (0);
+	}
+	new->value = value_copy;
+	new->next = ht->array[index];
+	ht->array[index] = new;
+
+	return (1);
 }
